@@ -1,0 +1,41 @@
+@use '../../GlobalStyles/mixin' as mixin;
+@use '../../GlobalStyles/variable' as var;
+
+.header {
+  @include mixin.flexCenter();
+  justify-content: space-around;
+  gap: 1rem;
+  width: 100%;
+  height: var.$header-height;
+  position: fixed;
+  opacity: 0.8;
+  .logo {
+    font-size: 4rem;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .nav {
+    ul {
+      @include mixin.flexCenter(true);
+      gap: 2rem;
+    }
+    li {
+      cursor: pointer;
+      @include mixin.flexCenter(true);
+      a {
+        font-size: 2rem;
+        font-weight: 500;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+    }
+  }
+}
+
+.header-animation {
+  transition: 0.4s linear;
+  opacity: 1;
+  background-color: var.$color-bg-text;
+}

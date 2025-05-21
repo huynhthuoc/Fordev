@@ -1,0 +1,26 @@
+{
+    "plugins": [
+      ["module-resolver", {
+        "alias": {
+            "~": "./src"
+        }
+      }],
+      [
+        "auto-import",
+        {
+          "declarations": [
+            {
+              "default": "React",
+              "path": "react"
+            },
+            {
+              "members": ["useState", "useEffect"],
+              "path": "react"
+            }
+          ]
+        }
+      ]
+    ]
+  }
+
+  

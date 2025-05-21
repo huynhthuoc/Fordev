@@ -1,0 +1,9 @@
+@use '../../GlobalStyles/mixin';
+@use '../../GlobalStyles/variable' as var;
+.home-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(499px, 1fr));
+  gap: 1.6rem;
+  align-items: center;
+  height: 100vh;
+}

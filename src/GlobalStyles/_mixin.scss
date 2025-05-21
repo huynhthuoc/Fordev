@@ -1,0 +1,26 @@
+@use '../GlobalStyles/variable' as var;
+@use 'sass:math';
+@mixin flexCenter($center: false) {
+  display: flex;
+  align-items: center;
+  @if ($center) {
+    justify-content: center;
+  }
+}
+
+@mixin font-style($size) {
+  @if ($size == small) {
+    font-size: var.$font-small;
+    font-weight: var.$font-weight-small;
+  }
+
+  @if ($size == medium) {
+    font-size: var.$font-medium;
+    font-weight: var.$font-weight-medium;
+  }
+
+  @if ($size == big) {
+    font-size: var.$font-big;
+    font-weight: var.$font-weight-big;
+  }
+}
