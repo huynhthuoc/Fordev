@@ -1,0 +1,36 @@
+@use '../../../GlobalStyles/mixin' as *;
+@use '../../../GlobalStyles/variable' as *;
+
+.wrapper-dots-heart {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: rotate(46deg);
+  .dots-heart {
+    position: absolute;
+    inset: 4.2rem;
+    display: flex;
+    align-items: center;
+    span {
+      width: 0.8rem;
+      height: 0.3rem;
+      background-color: $color-text;
+      display: block;
+      border-radius: 0.1rem;
+    }
+    .dots-heart-style {
+      animation: backround linear 1s infinite;
+      @keyframes backround {
+        0% {
+          transform: scale(1.2);
+        }
+        50% {
+          transform: scale(1.5);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

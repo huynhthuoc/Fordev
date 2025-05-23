@@ -7,7 +7,9 @@ const Home = () => {
     <>
       <div className="home-page">
         <WatchBanner />
-        <div>asdaskd;las</div>
+        <div>
+          <button>click me </button>
+        </div>
       </div>
     </>
   );
