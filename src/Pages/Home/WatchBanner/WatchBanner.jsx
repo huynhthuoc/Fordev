@@ -5,14 +5,18 @@ import WrapperDots from './WrapperDots';
 import WrapperDirection from './WrapperDirection';
 import './WatchBanner.scss';
 const WatchBanner = () => {
-  const [heartRate, setHeartRate] = useState(100);
-
+  const [heartRates, setHeartRates] = useState([0]);
   ///fake data heart rate
   useEffect(() => {
     const idSetinter = setInterval(() => {
-      const HearthRate = Math.floor(Math.random() * 200);
-      if (HearthRate > 90 && HearthRate < 166) {
-        setHeartRate(HearthRate);
+      const newHeart = Math.floor(Math.random() * 200);
+      if (newHeart > 55 && newHeart < 170) {
+        setHeartRates((prev) => {
+          if (prev.length >= 600) {
+            return [];
+          }
+          return [...prev, newHeart];
+        });
       }
     }, 1000);
     return () => {
@@ -38,8 +42,8 @@ const WatchBanner = () => {
       <div className="container-watch">
         <WrapperDirection />
         <WrapperDots />
-        <WrapperDotsHeart heartRate={heartRate} />
-        <HealthWeatherCard heartRate={heartRate} />
+        <WrapperDotsHeart heartRates={heartRates} />
+        <HealthWeatherCard heartRates={heartRates} />
       </div>
     </div>
   );

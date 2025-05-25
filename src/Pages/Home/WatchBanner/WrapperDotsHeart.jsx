@@ -1,12 +1,13 @@
 import React from 'react';
 import './WrapperDotsHeart.scss';
 
-const WrapperDotsHeart = ({ heartRate }) => {
+const WrapperDotsHeart = ({ heartRates }) => {
   const dotsHeart = new Array(50).fill('');
+  const lastHeartRate = heartRates[heartRates.length - 1] || 0;
   //tính giá trị dot cần style, nhịp tim tối đa là 200
   //tính 100% dot = 50 dot
   //sẽ là giá trị của nhịp tim heart / 2  và chia 100 * với tổng dot là kết quả dot cần style
-  const MathDot = Math.floor(dotsHeart.length * (heartRate / 2 / 100));
+  const MathDot = Math.floor(dotsHeart.length * (lastHeartRate / 2 / 100));
   //tạo biến giá trị cao nhất của color
   const maxColor = 120;
 
