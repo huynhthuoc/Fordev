@@ -29,7 +29,7 @@ const HeartChart = ({ heartRates }) => {
     //   ctx.moveTo(0, height / 2);
     // }
     //mai chỉnh sữa đoạn này lại !!!!! nếu mảng bất đầu từ giờ 00
-    //thì sẽ vẽ từ 0 , 35 nếu không sẽ vẽ tiếp điểm cuối cùng của mảng
+    //thì sẽ vẽ từ 0 , 35 nếu không sẽ vẽ tiếp điểm cuối cùng của mảng [tao có ý này tại sao không lấy số thời gian thực làm trục X :))]
 
     data.forEach((item, index) => {
       ctx.lineTo(maxHeartRate + index, height - item);
