@@ -5,20 +5,20 @@ import WrapperDots from './WrapperDots';
 import WrapperDirection from './WrapperDirection';
 import './WatchBanner.scss';
 const WatchBanner = () => {
-  const [heartRates, setHeartRates] = useState([0]);
+  const [heartRates, setHeartRates] = useState([111]);
   ///fake data heart rate
   useEffect(() => {
     const idSetinter = setInterval(() => {
       const newHeart = Math.floor(Math.random() * 200);
-      if (newHeart > 55 && newHeart < 170) {
+      if (newHeart > 70 && newHeart < 100) {
         setHeartRates((prev) => {
-          if (prev.length >= 600) {
+          if (prev.length >= 50) {
             return [];
           }
           return [...prev, newHeart];
         });
       }
-    }, 1000);
+    }, 101);
     return () => {
       clearInterval(idSetinter);
     };
