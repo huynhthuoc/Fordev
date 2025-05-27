@@ -10,15 +10,15 @@ const WatchBanner = () => {
   useEffect(() => {
     const idSetinter = setInterval(() => {
       const newHeart = Math.floor(Math.random() * 200);
-      if (newHeart > 70 && newHeart < 100) {
+      if (newHeart > 0 && newHeart < 200) {
         setHeartRates((prev) => {
-          if (prev.length >= 50) {
+          if (prev.length >= 60) {
             return [];
           }
           return [...prev, newHeart];
         });
       }
-    }, 101);
+    }, 2000);
     return () => {
       clearInterval(idSetinter);
     };
