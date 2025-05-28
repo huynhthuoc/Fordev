@@ -1,16 +1,15 @@
 import React from 'react';
-import './WrapperDots.scss';
-function WrapperDots() {
+import './WatchDotsWrapper.scss';
+function WatchDotsWrapperWrapper() {
   const dots = new Array(100).fill('');
   return (
-    <div className="wrapper-dots">
+    <div className="watch-dots-wrapper">
       {dots.map((item, index) => {
         // tạo biến gốc độ của mõi item
         const deg = 6 * (index + 1);
 
         return (
           <div
-            className="watch-dot"
             key={index}
             style={{
               transform: `rotate(${deg}deg)`,
@@ -33,4 +32,4 @@ function WrapperDots() {
   );
 }
 
-export default WrapperDots;
+export default WatchDotsWrapperWrapper;

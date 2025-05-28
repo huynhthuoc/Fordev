@@ -5,7 +5,7 @@ import WatchBanner from './WatchBanner';
 const Home = () => {
   return (
     <>
-      <div className="home-page">
+      <div className="homePage">
         <WatchBanner />
         <div>
           <button>click me </button>

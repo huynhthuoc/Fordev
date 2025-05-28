@@ -1,6 +1,6 @@
 @use '../../GlobalStyles/mixin';
 @use '../../GlobalStyles/variable' as var;
-.home-page {
+.homePage {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(499px, 1fr));
   gap: 1.6rem;

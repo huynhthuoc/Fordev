@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import HealthWeatherCard from './HealthWeatherCard';
-import WrapperDotsHeart from './WrapperDotsHeart';
-import WrapperDots from './WrapperDots';
-import WrapperDirection from './WrapperDirection';
+import HealthCardWrapper from './HealthCardWrapper';
+import WatchDotsInSideWrapper from './WatchDotsInSideWrapper';
+import WatchDotsWrapper from './WatchDotsWrapper';
+import WatchDirectionWrapper from './WatchDirectionWrapper';
 import './WatchBanner.scss';
 const WatchBanner = () => {
   const [heartRates, setHeartRates] = useState([111]);
@@ -12,7 +12,7 @@ const WatchBanner = () => {
       const newHeart = Math.floor(Math.random() * 200);
       if (newHeart > 0 && newHeart < 200) {
         setHeartRates((prev) => {
-          if (prev.length >= 60) {
+          if (prev.length >= 500) {
             return [];
           }
           return [...prev, newHeart];
@@ -40,10 +40,10 @@ const WatchBanner = () => {
   return (
     <div className="banner-watch">
       <div className="container-watch">
-        <WrapperDirection />
-        <WrapperDots />
-        <WrapperDotsHeart heartRates={heartRates} />
-        <HealthWeatherCard heartRates={heartRates} />
+        <WatchDirectionWrapper />
+        <WatchDotsWrapper />
+        <WatchDotsInSideWrapper heartRates={heartRates} />
+        <HealthCardWrapper heartRates={heartRates} />
       </div>
     </div>
   );

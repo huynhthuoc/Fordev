@@ -1,0 +1,56 @@
+@use '../../../GlobalStyles/mixin' as *;
+@use '../../../GlobalStyles/variable' as *;
+.health-heartRate {
+  @include flexCenter(true);
+  flex-direction: column;
+  width: 100%;
+  .heartRate-heart {
+    @include flexCenter(true);
+    gap: 1rem;
+    .heartRate-icon {
+      width: 3rem;
+      height: 3rem;
+      i {
+        transition: all linear;
+        width: 100%;
+        height: 100%;
+        font-size: 2rem;
+        color: #f25b75;
+        @include flexCenter(true);
+        animation: heart 1s ease-out infinite;
+        @keyframes heart {
+          0% {
+            transform: scale(1);
+          }
+          25% {
+            transform: scale(1.3);
+          }
+          50% {
+            transform: scale(1);
+          }
+          75% {
+            transform: scale(1.2);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+    .heartRate-number {
+      @include flexCenter(true);
+      gap: 0.5rem;
+      font-size: 2rem;
+      color: $color-title;
+    }
+  }
+  .heartRate-time {
+    width: 100%;
+    height: 2rem;
+    @include flexCenter();
+    p {
+      color: red;
+      margin: 0 auto;
+    }
+  }
+}

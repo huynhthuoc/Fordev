@@ -1,12 +1,12 @@
 @use '../../../GlobalStyles/mixin' as *;
 @use '../../../GlobalStyles/variable' as *;
 
-.wrapper-dots {
+.watch-dots-wrapper {
   position: absolute;
   height: 100%;
   width: 100%;
   transform: rotate(24deg);
-  .watch-dot {
+  > div {
     position: absolute;
     inset: 3rem;
     display: flex;

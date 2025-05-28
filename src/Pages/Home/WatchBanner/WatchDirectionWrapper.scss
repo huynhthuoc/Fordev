@@ -1,18 +1,23 @@
 @use '../../../GlobalStyles/mixin' as *;
 @use '../../../GlobalStyles/variable' as *;
 
-.wrapper-direction {
+.watch-direction-wrapper {
   position: absolute;
   height: 100%;
   width: 100%;
   transform: rotate(75deg);
-  .watch-direction {
+  > div {
     position: absolute;
     inset: 1rem;
     user-select: none;
     font-weight: 900;
     display: flex;
     align-items: center;
+    > i {
+      position: absolute;
+      font-size: 2rem;
+      transform: translate(-50%, 0) rotate(90deg);
+    }
   }
   .direction-dot {
     position: absolute;
@@ -21,11 +26,7 @@
     background-color: $color-text;
     border-radius: 0.1rem;
   }
-  i {
-    position: absolute;
-    font-size: 2rem;
-    transform: translate(-50%, 0) rotate(90deg);
-  }
+
   .direction-number {
     position: absolute;
     font-size: 2rem;

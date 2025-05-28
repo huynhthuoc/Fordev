@@ -1,9 +1,9 @@
 import React from 'react';
-import './WrapperDirection.scss';
-function WrapperDirection() {
+import './WatchDirectionWrapper.scss';
+function WatchDirectionWrapper() {
   const directionDots = new Array(24).fill('');
   return (
-    <div className="wrapper-direction">
+    <div className="watch-direction-wrapper">
       {directionDots.map((item, index) => {
         // tạo biến gốc độ của mõi item
         const deg = 15 * (index + 1);
@@ -14,7 +14,6 @@ function WrapperDirection() {
             style={{
               transform: `rotate(${deg}deg)`,
             }}
-            className="watch-direction"
           >
             {index % 2 === 0 ? (
               index !== 0 ? (
@@ -32,4 +31,4 @@ function WrapperDirection() {
   );
 }
 
-export default WrapperDirection;
+export default WatchDirectionWrapper;

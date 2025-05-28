@@ -1,7 +1,7 @@
 import React from 'react';
-import './WrapperDotsHeart.scss';
+import './WatchDotsInSideWrapper.scss';
 
-const WrapperDotsHeart = ({ heartRates }) => {
+const WatchDotsInSideWrapper = ({ heartRates }) => {
   const dotsHeart = new Array(50).fill('');
   const lastHeartRate = heartRates[heartRates.length - 1] || 0;
   //tính giá trị dot cần style, nhịp tim tối đa là 200
@@ -12,7 +12,7 @@ const WrapperDotsHeart = ({ heartRates }) => {
   const maxColor = 120;
 
   return (
-    <div className="wrapper-dots-heart">
+    <div className="watch-dots-inside-wrapper">
       {dotsHeart.map((item, index) => {
         const checkDots = index < MathDot;
         // tạo biến gốc độ của mõi item
@@ -23,11 +23,7 @@ const WrapperDotsHeart = ({ heartRates }) => {
           maxColor - (index + 1) * (maxColor / dotsHeart.length),
         );
         return (
-          <div
-            key={index}
-            className="dots-heart"
-            style={{ transform: `rotate(${deg}deg)` }}
-          >
+          <div key={index} style={{ transform: `rotate(${deg}deg)` }}>
             <span
               style={
                 checkDots
@@ -37,7 +33,7 @@ const WrapperDotsHeart = ({ heartRates }) => {
                     }
                   : {}
               }
-              className={checkDots ? 'dots-heart-style' : ''}
+              className={checkDots ? 'dot-style' : ''}
             ></span>
           </div>
         );
@@ -46,4 +42,4 @@ const WrapperDotsHeart = ({ heartRates }) => {
   );
 };
 
-export default React.memo(WrapperDotsHeart);
+export default React.memo(WatchDotsInSideWrapper);
