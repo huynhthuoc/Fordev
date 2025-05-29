@@ -17,18 +17,37 @@
       background-color: $color-text;
       display: block;
       border-radius: 0.1rem;
+      opacity: 0;
     }
-    .dot-style {
-      animation: backround linear 1s infinite;
-      @keyframes backround {
+    .dot-active {
+      animation: backgoundActive linear 1s forwards;
+      @keyframes backgoundActive {
         0% {
-          transform: scale(1.2);
+          opacity: 1;
         }
+
         50% {
-          transform: scale(1.5);
+          opacity: 1;
         }
         100% {
-          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    }
+    .dot-not-active {
+      animation: backroundNotActive linear 0.5s forwards;
+      @keyframes backroundNotActive {
+        0% {
+          opacity: 1;
+        }
+        25% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
         }
       }
     }

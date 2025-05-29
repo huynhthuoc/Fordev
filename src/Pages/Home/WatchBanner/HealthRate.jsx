@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -7,6 +7,8 @@ import {
   PointElement,
   LineElement,
   Tooltip,
+  Colors,
+  Filler,
 } from 'chart.js';
 import './HealthRate.scss';
 
@@ -20,7 +22,7 @@ const HealthRate = ({ heartRates }) => {
         </div>
         <div className="heartRate-number">{lastHealthRate}</div>
       </div>
-      <HealthChart heartRates={heartRates} />
+      {/* <HealthChart heartRates={heartRates} /> */}
       <div className="heartRate-time">
         <p>00:00</p>
         <p>12:00</p>
@@ -39,16 +41,34 @@ const HealthChart = React.memo(({ heartRates }) => {
     PointElement,
     LineElement,
     Tooltip,
+    Colors,
+    Filler,
   );
+  const chartRef = useRef();
+
+  useEffect(() => {
+    const chart = chartRef.current;
+    if (!chart) return;
+
+    const ctx = chart.ctx;
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, 'rgba(242, 91, 116, 0.71)');
+    gradient.addColorStop(1, 'rgba(242, 91, 116, 0.25)');
+    chart.data.datasets[0].backgroundColor = gradient;
+
+    chart.update();
+  }, []);
+
+  // #3d2125 #a33346
   const data = {
     labels: heartRates.map((_, index) => index + 1),
     datasets: [
       {
         data: heartRates,
+        fill: 'start',
         borderColor: ' #f25b75',
-        tension: 0.3,
+        tension: 0.1,
         pointRadius: 0,
-        fill: true,
       },
     ],
   };
@@ -78,6 +98,7 @@ const HealthChart = React.memo(({ heartRates }) => {
 
   return (
     <Line
+      ref={chartRef}
       data={data}
       options={options}
       style={{ width: '25rem', height: '7rem' }}

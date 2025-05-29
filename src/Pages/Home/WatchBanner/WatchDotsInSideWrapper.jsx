@@ -10,16 +10,13 @@ const WatchDotsInSideWrapper = ({ heartRates }) => {
   const MathDot = Math.floor(dotsHeart.length * (lastHeartRate / 2 / 100));
   //tạo biến giá trị cao nhất của color
   const maxColor = 120;
-
   return (
     <div className="watch-dots-inside-wrapper">
-      {dotsHeart.map((item, index) => {
-        const checkDots = index < MathDot;
-        // tạo biến gốc độ của mõi item
-        //
-        const deg = 1.8 * index;
-        //tạo biến giảm dần từ maxcolor để lấy giá trị giảm dần
+      {dotsHeart.map((_, index) => {
+        const checkDots = index <= MathDot;
+        const deg = 1.8 * index; // tạo biến gốc độ của mõi item
         const minColor = Math.floor(
+          //tạo biến giảm dần từ maxcolor để lấy giá trị giảm dần
           maxColor - (index + 1) * (maxColor / dotsHeart.length),
         );
         return (
@@ -31,9 +28,12 @@ const WatchDotsInSideWrapper = ({ heartRates }) => {
                       animationDelay: `${index / MathDot}s`,
                       backgroundColor: `hsl(${minColor}, 95.70%, 46.10%)`,
                     }
-                  : {}
+                  : {
+                      animationDelay: '0s',
+                      backgroundColor: `hsl(${minColor}, 95.70%, 46.10%)`,
+                    }
               }
-              className={checkDots ? 'dot-style' : ''}
+              className={checkDots ? 'dot-active' : 'dot-not-active'}
             ></span>
           </div>
         );
