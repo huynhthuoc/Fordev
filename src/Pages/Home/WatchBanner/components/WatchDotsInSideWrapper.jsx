@@ -1,9 +1,11 @@
-import React from 'react';
-import './WatchDotsInSideWrapper.scss';
+import React, { useMemo } from 'react';
+import '../styles/WatchDotsInSideWrapper.scss';
+import useDataHeart from '../useDataHeart';
 
-const WatchDotsInSideWrapper = ({ heartRates }) => {
-  const dotsHeart = new Array(50).fill('');
-  const lastHeartRate = heartRates[heartRates.length - 1] || 0;
+const WatchDotsInSideWrapper = () => {
+  const dataHeart = useDataHeart();
+  const dotsHeart = useMemo(() => new Array(50).fill(''), []);
+  const lastHeartRate = dataHeart[dataHeart.length - 1] || 0;
   const MathDot = Math.floor(dotsHeart.length * (lastHeartRate / 2 / 100));
   const maxColor = 120;
   return (
@@ -39,4 +41,4 @@ const WatchDotsInSideWrapper = ({ heartRates }) => {
   );
 };
 
-export default React.memo(WatchDotsInSideWrapper);
+export default WatchDotsInSideWrapper;

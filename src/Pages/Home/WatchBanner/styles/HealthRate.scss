@@ -1,5 +1,5 @@
-@use '../../../GlobalStyles/mixin' as *;
-@use '../../../GlobalStyles/variable' as *;
+@use '../../../../GlobalStyles/mixin' as *;
+@use '../../../../GlobalStyles/variable' as *;
 .health-heartRate {
   @include flexCenter(true);
   flex-direction: column;
@@ -42,15 +42,6 @@
       gap: 0.5rem;
       font-size: 2rem;
       color: $color-title;
-    }
-  }
-  .heartRate-time {
-    width: 100%;
-    height: 2rem;
-    @include flexCenter();
-    p {
-      color: red;
-      margin: 0 auto;
     }
   }
 }

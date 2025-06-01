@@ -1,5 +1,5 @@
 import React from 'react';
-import './WatchDirectionWrapper.scss';
+import '../styles/WatchDirectionWrapper.scss';
 function WatchDirectionWrapper() {
   const directionDots = new Array(24).fill('');
   return (

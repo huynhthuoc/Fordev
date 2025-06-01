@@ -10,31 +10,11 @@ import {
   Colors,
   Filler,
 } from 'chart.js';
-import './HealthRate.scss';
+import useDataHeart from '../useDataHeart';
+const HealthChart = () => {
+  const dataHeart = useDataHeart();
 
-const HealthRate = ({ heartRates }) => {
-  const lastHealthRate = heartRates[heartRates.length - 1] || 0;
-  return (
-    <div className="health-heartRate">
-      <div className="heartRate-heart">
-        <div className="heartRate-icon">
-          <i className="fi fi-ss-heart"></i>
-        </div>
-        <div className="heartRate-number">{lastHealthRate}</div>
-      </div>
-      <HealthChart heartRates={heartRates} />
-      <div className="heartRate-time">
-        <p>00:00</p>
-        <p>12:00</p>
-        <p>00:00</p>
-      </div>
-    </div>
-  );
-};
-
-export default HealthRate;
-
-const HealthChart = React.memo(({ heartRates }) => {
+  const dots = new Array(80).fill(0);
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -46,16 +26,15 @@ const HealthChart = React.memo(({ heartRates }) => {
   );
 
   const data = {
-    labels: heartRates.map((_, index) => index + 1),
+    labels: dataHeart.map((_, index) => index + 1),
     datasets: [
       {
-        data: heartRates,
+        data: dataHeart,
         fill: 'start',
         borderColor: 'rgba(242, 91, 116, 0.78)',
         tension: 0.1,
         pointRadius: 0,
         backgroundColor: (context) => {
-          console.log({ context });
           const chart = context.chart;
           const { ctx, chartArea } = chart;
           if (!chartArea) return null;
@@ -65,17 +44,26 @@ const HealthChart = React.memo(({ heartRates }) => {
             0,
             chartArea.bottom,
           );
-          gradient.addColorStop(0, 'rgba(255, 76, 117, 0.4)');
+          gradient.addColorStop(0, 'rgba(255, 76, 118, 0.58)');
           gradient.addColorStop(1, 'rgba(255, 76, 117, 0)');
 
           return gradient;
         },
+      },
+      {
+        label: 'Dots phía dưới',
+        data: dots,
+        borderWidth: 0,
+        pointRadius: 2,
+        pointBackgroundColor: 'rgb(131, 108, 108)',
+        showLine: false,
       },
     ],
   };
 
   const options = {
     responsive: false,
+
     plugins: {
       legend: {
         display: false,
@@ -96,7 +84,6 @@ const HealthChart = React.memo(({ heartRates }) => {
       },
     },
   };
-
   return (
     <Line
       data={data}
@@ -104,4 +91,5 @@ const HealthChart = React.memo(({ heartRates }) => {
       style={{ width: '25rem', height: '7rem' }}
     />
   );
-});
+};
+export default HealthChart;

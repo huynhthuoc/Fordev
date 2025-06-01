@@ -1,10 +1,10 @@
 import React from 'react';
-import './WatchDotsWrapper.scss';
+import '../styles/WatchDotsWrapper.scss';
 function WatchDotsWrapperWrapper() {
   const dots = new Array(100).fill('');
   return (
     <div className="watch-dots-wrapper">
-      {dots.map((item, index) => {
+      {dots.map((_, index) => {
         // tạo biến gốc độ của mõi item
         const deg = 6 * (index + 1);
 
