@@ -1,0 +1,26 @@
+@use '../../../../GlobalStyles/mixin' as *;
+@use '../../../../GlobalStyles/variable' as *;
+
+// background: linear-gradient(
+//     135deg,
+//     #ffa629,
+//     #f47cc3,
+//     #8a4fff,
+//     #7ec9f9,
+//     #70d3e4
+//   );
+.health-mainDisplayWatch {
+  @include flexCenter(true);
+  height: 100%;
+  width: 92%;
+  border-radius: 20rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 166, 41, 0.2),
+    rgba(244, 124, 195, 0.2),
+    rgba(138, 79, 255, 0.2),
+    rgba(126, 201, 249, 0.2),
+    rgba(112, 211, 228, 0.2)
+  );
+  margin: 0 auto;
+}

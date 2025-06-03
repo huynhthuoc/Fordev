@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { contextData } from './context';
+import { contextDataHeart } from './context';
 const useDataHeart = () => {
-  const dataHeart = useContext(contextData);
+  const dataHeart = useContext(contextDataHeart);
 
   return dataHeart;
 };

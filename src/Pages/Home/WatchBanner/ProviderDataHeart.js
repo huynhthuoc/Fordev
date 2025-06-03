@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { contextData } from './context';
+import { contextDataHeart } from './context';
 const ProviderDataHeart = ({ children }) => {
   const [dataHeart, setdataHeart] = useState([0]);
   ///fake data heart rate
@@ -20,7 +20,9 @@ const ProviderDataHeart = ({ children }) => {
   }, []);
 
   return (
-    <contextData.Provider value={dataHeart}>{children}</contextData.Provider>
+    <contextDataHeart.Provider value={dataHeart}>
+      {children}
+    </contextDataHeart.Provider>
   );
 };
 

@@ -4,23 +4,21 @@ import useDataHeart from '../useDataHeart';
 //components
 //styles
 import '../styles/HealthTimer.scss';
-
+import { getDate } from './getDate';
+const TIME_FORMAT_OPTIONS = {
+  hour: '2-digit',
+  minute: '2-digit',
+};
 const HealthTimer = () => {
   const [times, setTimes] = useState({
     hours: 0,
     minutes: 0,
     seconds: 0,
-    timerUpdate: formatTime(),
-    timer: formatTime(),
+    timerUpdate: getDate(TIME_FORMAT_OPTIONS),
+    timer: getDate(TIME_FORMAT_OPTIONS),
   });
-  const isDataHeart = useDataHeart().length !== 0;
-  function formatTime() {
-    return new Date().toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
-    });
-  }
 
+  const isDataHeart = useDataHeart().length !== 0;
   useEffect(() => {
     const idSetInter = setInterval(() => {
       if (isDataHeart) {
@@ -30,7 +28,7 @@ const HealthTimer = () => {
             hours: prev.minutes >= 60 ? prev.hours + 1 : prev.hours,
             minutes: prev.seconds >= 59 ? prev.minutes + 1 : prev.minutes,
             seconds: prev.seconds >= 59 ? 0 : prev.seconds + 1,
-            timerUpdate: formatTime(),
+            timerUpdate: getDate(TIME_FORMAT_OPTIONS),
           };
         });
       } else {
@@ -38,8 +36,8 @@ const HealthTimer = () => {
           hours: 0,
           minutes: 0,
           seconds: 0,
-          timerUpdate: formatTime(),
-          timer: formatTime(),
+          timerUpdate: getDate(TIME_FORMAT_OPTIONS),
+          timer: getDate(TIME_FORMAT_OPTIONS),
         });
       }
     }, 1000);

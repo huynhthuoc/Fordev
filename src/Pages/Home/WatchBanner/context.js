@@ -1,3 +1,3 @@
 import React from 'react';
 
-export const contextData = React.createContext();
+export const contextDataHeart = React.createContext();
