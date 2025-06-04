@@ -11,8 +11,8 @@
 //   );
 .health-mainDisplayWatch {
   @include flexCenter(true);
-  height: 100%;
-  width: 92%;
+  height: 10rem;
+  width: 85%;
   border-radius: 20rem;
   background: linear-gradient(
     135deg,
@@ -23,4 +23,45 @@
     rgba(112, 211, 228, 0.2)
   );
   margin: 0 auto;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  .mainDisplayWatch-date {
+    text-align: end;
+    font-size: 2.8rem;
+    line-height: 0.2rem;
+    font-weight: $font-weight-big;
+    flex: 1;
+    padding: 0rem 1rem;
+    background: linear-gradient(
+      135deg,
+      #ffa629,
+      #f47cc3,
+      #8a4fff,
+      #7ec9f9,
+      #70d3e4
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .mainDisplayWatch-time {
+    height: 10rem;
+    font-size: 4.5rem;
+    flex: 1;
+    margin: 0 auto;
+    @include flexCenter(true);
+    background: linear-gradient(
+      135deg,
+      #ffa629,
+      #f47cc3,
+      #8a4fff,
+      #7ec9f9,
+      #70d3e4
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all linear 1.2s;
+  }
+  .mainDisplayWatch-circle {
+    flex: 1;
+  }
 }
