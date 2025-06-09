@@ -36,7 +36,7 @@ const MainDisplayWatch = () => {
       <div className="mainDisplayWatch-time">
         <h2>{dates.time}</h2>
       </div>
-      <div className="mainDisplayWatch-circle">s</div>
+      <div className="mainDisplayWatch-circle"></div>
     </div>
   );
 };

@@ -14,6 +14,7 @@
   height: 10rem;
   width: 85%;
   border-radius: 20rem;
+  gap: 2rem;
   background: linear-gradient(
     135deg,
     rgba(255, 166, 41, 0.2),
@@ -22,16 +23,15 @@
     rgba(126, 201, 249, 0.2),
     rgba(112, 211, 228, 0.2)
   );
+  border: 0.2rem solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
   margin: 0 auto;
-  gap: 0.5rem;
   padding: 0 1rem;
   .mainDisplayWatch-date {
     text-align: end;
     font-size: 2.8rem;
     line-height: 0.2rem;
     font-weight: $font-weight-big;
-    flex: 1;
-    padding: 0rem 1rem;
     background: linear-gradient(
       135deg,
       #ffa629,
@@ -46,8 +46,6 @@
   .mainDisplayWatch-time {
     height: 10rem;
     font-size: 4.5rem;
-    flex: 1;
-    margin: 0 auto;
     @include flexCenter(true);
     background: linear-gradient(
       135deg,
@@ -62,6 +60,48 @@
     transition: all linear 1.2s;
   }
   .mainDisplayWatch-circle {
-    flex: 1;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    background: linear-gradient(
+      0deg,
+      #ffa629,
+      #f47cc3,
+      #8a4fff,
+      #7ec9f9,
+      #70d3e4
+    );
+    background-size: 300% 300%;
+    border: 0.2rem solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+    animation: rotates 10s infinite linear;
+    @keyframes rotates {
+      0% {
+        transform: rotate(0deg);
+        background-position: 0% 50%;
+        opacity: 1;
+      }
+      25% {
+        transform: rotate(90deg);
+        background-position: 50% 50%;
+        opacity: 0.9;
+      }
+      50% {
+        transform: rotate(180deg);
+        background-position: 100% 50%;
+        opacity: 0.8;
+      }
+      75% {
+        transform: rotate(270deg);
+        background-position: 50% 100%;
+        opacity: 0.7;
+      }
+      100% {
+        transform: rotate(360deg);
+        background-position: 0% 50%;
+        opacity: 1;
+      }
+    }
   }
 }
