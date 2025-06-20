@@ -1,12 +1,11 @@
 import React from 'react';
 import './Home.scss';
-import WatchBanner from './WatchBanner';
-
+import DigitalClock from './DigitalClock';
 const Home = () => {
   return (
     <>
       <div className="homePage">
-        <WatchBanner />
+        <DigitalClock />
         <div>
           <button>click me </button>
         </div>

@@ -1,6 +1,6 @@
 @use '../../../../GlobalStyles/mixin' as *;
 @use '../../../../GlobalStyles/variable' as *;
-.watch-dots-inside-wrapper {
+.digitalClock__dotsInside {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -16,9 +16,9 @@
       background-color: $color-text;
       display: block;
       border-radius: 0.1rem;
-      opacity: 0;
+      opacity: 0.1;
     }
-    .dot-active {
+    .dotsInside--active {
       animation: backgoundActive linear 1s forwards;
       @keyframes backgoundActive {
         0% {
@@ -33,7 +33,7 @@
         }
       }
     }
-    .dot-not-active {
+    .dotsInside--notActive {
       animation: backroundNotActive linear 0.5s forwards;
       @keyframes backroundNotActive {
         0% {
@@ -46,7 +46,7 @@
           opacity: 1;
         }
         100% {
-          opacity: 0;
+          opacity: 0.1;
         }
       }
     }

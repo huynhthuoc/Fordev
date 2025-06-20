@@ -6,11 +6,10 @@ import { Link } from 'react-router';
 const Header = () => {
   const scrollY = useScrollY();
   return (
-    <header className={scrollY > 50 ? 'header header-animation' : 'header'}>
+    <header className={scrollY > 50 ? 'header header-srollY' : 'header'}>
       <div className="logo">
         <Link to="/">ForDev</Link>
       </div>
-
       <div className="nav">
         <ul>
           <li>

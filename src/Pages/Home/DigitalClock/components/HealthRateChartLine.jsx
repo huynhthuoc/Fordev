@@ -11,7 +11,7 @@ import {
   Filler,
 } from 'chart.js';
 import useDataHeart from '../useDataHeart';
-const HealthChart = () => {
+const HealthRateChartLine = () => {
   const dataHeart = useDataHeart();
 
   const dots = new Array(80).fill(0);
@@ -92,4 +92,4 @@ const HealthChart = () => {
     />
   );
 };
-export default HealthChart;
+export default HealthRateChartLine;

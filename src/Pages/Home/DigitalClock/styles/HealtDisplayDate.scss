@@ -9,7 +9,7 @@
 //     #7ec9f9,
 //     #70d3e4
 //   );
-.health-mainDisplayWatch {
+.health__displayDate {
   @include flexCenter(true);
   height: 10rem;
   width: 85%;
@@ -27,7 +27,7 @@
   box-shadow: 0 0 1rem rgba(255, 255, 255, 0.5);
   margin: 0 auto;
   padding: 0 1rem;
-  .mainDisplayWatch-date {
+  .displayDate__fullDate {
     text-align: end;
     font-size: 2.8rem;
     line-height: 0.2rem;
@@ -43,7 +43,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .mainDisplayWatch-time {
+  .displayDate__time {
     height: 10rem;
     font-size: 4.5rem;
     @include flexCenter(true);
@@ -59,7 +59,7 @@
     -webkit-text-fill-color: transparent;
     transition: all linear 1.2s;
   }
-  .mainDisplayWatch-circle {
+  .displayDate__circle {
     border-radius: 50%;
     width: 5rem;
     height: 5rem;

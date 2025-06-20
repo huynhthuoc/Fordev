@@ -1,6 +1,6 @@
 @use '../../../../GlobalStyles/mixin' as *;
 @use '../../../../GlobalStyles/variable' as *;
-.heartRate-timer {
+.heartRate__timer {
   width: 100%;
   height: 2rem;
   @include flexCenter();

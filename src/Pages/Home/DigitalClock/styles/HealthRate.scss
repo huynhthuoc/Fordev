@@ -1,13 +1,13 @@
 @use '../../../../GlobalStyles/mixin' as *;
 @use '../../../../GlobalStyles/variable' as *;
-.health-heartRate {
+.health__heartRate {
   @include flexCenter(true);
   flex-direction: column;
   width: 100%;
-  .heartRate-heart {
+  .heartRate__heart {
     @include flexCenter(true);
     gap: 1rem;
-    .heartRate-icon {
+    .heart__icon {
       width: 3rem;
       height: 3rem;
       i {
@@ -37,7 +37,7 @@
         }
       }
     }
-    .heartRate-number {
+    .heart__number {
       @include flexCenter(true);
       gap: 0.5rem;
       font-size: 2rem;

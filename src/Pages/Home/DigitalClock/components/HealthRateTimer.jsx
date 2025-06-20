@@ -3,13 +3,13 @@ import useDataHeart from '../useDataHeart';
 
 //components
 //styles
-import '../styles/HealthTimer.scss';
+import '../styles/HealthRateTimer.scss';
 import { getDate } from './getDate';
 const TIME_FORMAT_OPTIONS = {
   hour: '2-digit',
   minute: '2-digit',
 };
-const HealthTimer = () => {
+const HealthRateTimer = () => {
   const [times, setTimes] = useState({
     hours: 0,
     minutes: 0,
@@ -49,7 +49,7 @@ const HealthTimer = () => {
   }, [isDataHeart]);
 
   return (
-    <div className="heartRate-timer">
+    <div className="heartRate__timer">
       <p>{times.timer}</p>
       <p>
         {times.hours >= 10 ? times.hours : `0${times.hours}`}
@@ -63,4 +63,4 @@ const HealthTimer = () => {
   );
 };
 
-export default HealthTimer;
+export default HealthRateTimer;

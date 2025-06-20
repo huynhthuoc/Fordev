@@ -1,6 +1,6 @@
 @use '../../../../GlobalStyles/mixin' as *;
 @use '../../../../GlobalStyles/variable' as *;
-.watch-direction-wrapper {
+.digitalClock__direction {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -18,7 +18,7 @@
       transform: translate(-50%, 0) rotate(90deg);
     }
   }
-  .direction-dot {
+  .direction__dot {
     position: absolute;
     width: 1.2rem;
     height: 0.1rem;
@@ -26,7 +26,7 @@
     border-radius: 0.1rem;
   }
 
-  .direction-number {
+  .direction__number {
     position: absolute;
     font-size: 2rem;
     transform: rotate(270deg);

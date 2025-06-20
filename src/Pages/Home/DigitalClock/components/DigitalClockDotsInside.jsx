@@ -1,21 +1,23 @@
 import React, { useMemo } from 'react';
-import '../styles/WatchDotsInSideWrapper.scss';
+import '../styles/DigitalClockDotsInside.scss';
 import useDataHeart from '../useDataHeart';
 
-const WatchDotsInSideWrapper = () => {
+const DigitalClockDotsInside = () => {
   const dataHeart = useDataHeart();
   const dotsHeart = useMemo(() => new Array(50).fill(''), []);
   const lastHeartRate = dataHeart[dataHeart.length - 1] || 0;
   const MathDot = Math.floor(dotsHeart.length * (lastHeartRate / 2 / 100));
   const maxColor = 120;
   return (
-    <div className="watch-dots-inside-wrapper">
+    <div className="digitalClock__dotsInside">
       {dotsHeart.map((_, index) => {
         const checkDots = index <= MathDot;
+
         //giá trị góc của mỗi dot
         const deg = 1.8 * index;
-        //giá trị màu giảm dần từ 120 đến 0
+
         const minColor = Math.floor(
+          //giá trị màu giảm dần từ 120 đến 0
           maxColor - (index + 1) * (maxColor / dotsHeart.length),
         );
         return (
@@ -32,7 +34,9 @@ const WatchDotsInSideWrapper = () => {
                       backgroundColor: `hsl(${minColor}, 95.70%, 46.10%)`,
                     }
               }
-              className={checkDots ? 'dot-active' : 'dot-not-active'}
+              className={
+                checkDots ? 'dotsInside--active' : 'dotsInside--notActive'
+              }
             ></span>
           </div>
         );
@@ -41,4 +45,4 @@ const WatchDotsInSideWrapper = () => {
   );
 };
 
-export default WatchDotsInSideWrapper;
+export default DigitalClockDotsInside;

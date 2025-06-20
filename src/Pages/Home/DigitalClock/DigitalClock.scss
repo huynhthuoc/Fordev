@@ -1,15 +1,13 @@
 @use '../../../GlobalStyles/mixin' as *;
 @use '../../../GlobalStyles/variable' as *;
-.banner-watch {
+.digitalClock {
   margin: 0 auto;
   border: 2px solid $color-bg-text;
   border-radius: 50%;
   color: $color-text;
-  .container-watch {
-    position: relative;
-    width: 50rem;
-    height: 50rem;
-    border-radius: 50%;
-    @include flexCenter(true);
-  }
+  position: relative;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  @include flexCenter(true);
 }

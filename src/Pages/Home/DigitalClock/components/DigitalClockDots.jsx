@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/WatchDotsWrapper.scss';
-function WatchDotsWrapperWrapper() {
+import '../styles/DigitalClockDots.scss';
+function DigitalClockDots() {
   const dots = new Array(100).fill('');
   return (
-    <div className="watch-dots-wrapper">
+    <div className="digitalClock__dots">
       {dots.map((_, index) => {
         // tạo biến gốc độ của mõi item
         const deg = 6 * (index + 1);
@@ -32,4 +32,4 @@ function WatchDotsWrapperWrapper() {
   );
 }
 
-export default WatchDotsWrapperWrapper;
+export default DigitalClockDots;
