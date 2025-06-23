@@ -5,6 +5,8 @@ import DigitalClockHealth from './components/DigitalClockHealth';
 import DigitalClockDirection from './components/DigitalClockDirection';
 import DigitalClockDots from './components/DigitalClockDots';
 import DigitalClockDotsInside from './components/DigitalClockDotsInside';
+import DigitalClockDotsBottom from './components/DigitalClockDotsBottom';
+
 import './DigitalClock.scss';
 const DigitalClock = () => {
   return (
@@ -14,6 +16,7 @@ const DigitalClock = () => {
         <DigitalClockDots />
         <DigitalClockDotsInside />
         <DigitalClockHealth />
+        <DigitalClockDotsBottom />
       </div>
     </ProviderDataHeart>
   );

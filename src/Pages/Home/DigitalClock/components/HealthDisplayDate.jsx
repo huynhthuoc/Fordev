@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getDate } from './getDate';
-import '../styles/HealtDisplayDate.scss';
+import '../styles/HealthDisplayDate.scss';
 
 //opstion  date
 const DATE_FORMAT_OPTIONS = {
@@ -9,7 +9,7 @@ const DATE_FORMAT_OPTIONS = {
   weekday: 'short',
 };
 const TIME_FORMAT_OPTIONS = { hour: '2-digit', minute: '2-digit' };
-const HealtDisplayDate = () => {
+const HealthDisplayDate = () => {
   const [dates, setDates] = useState({
     date: getDate(DATE_FORMAT_OPTIONS).toUpperCase().split(','),
     time: getDate(TIME_FORMAT_OPTIONS),
@@ -41,4 +41,4 @@ const HealtDisplayDate = () => {
   );
 };
 
-export default HealtDisplayDate;
+export default HealthDisplayDate;

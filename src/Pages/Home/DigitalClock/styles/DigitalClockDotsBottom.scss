@@ -1,0 +1,38 @@
+@use '../../../../GlobalStyles/mixin' as *;
+@use '../../../../GlobalStyles/variable' as *;
+
+.digitalClock__dotsWeather {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(-1) rotate(210deg);
+  > div {
+    position: absolute;
+    inset: 4.2rem;
+    display: flex;
+    align-items: center;
+  }
+  span {
+    width: 0.8rem;
+    height: 0.3rem;
+    background-color: white;
+    display: block;
+    border-radius: 0.1rem;
+    opacity: 0.1;
+  }
+  .dotsWeather--active {
+    animation: dotsWeatherActive linear 2s infinite;
+    @keyframes dotsWeatherActive {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.2;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
