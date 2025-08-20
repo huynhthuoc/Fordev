@@ -15,4 +15,4 @@ const DigitalClockHealth = () => {
   );
 };
 
-export default React.memo(DigitalClockHealth);
+export default DigitalClockHealth;

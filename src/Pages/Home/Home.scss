@@ -1,9 +1,10 @@
-@use '../../GlobalStyles/mixin';
-@use '../../GlobalStyles/variable' as var;
+@use '../../GlobalStyles/mixin' as *;
+@use '../../GlobalStyles/variable' as *;
 .homePage {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(499px, 1fr));
   gap: 1.6rem;
+  justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 10rem 5rem;
 }

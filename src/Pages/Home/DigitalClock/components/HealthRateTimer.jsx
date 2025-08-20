@@ -20,7 +20,7 @@ const HealthRateTimer = () => {
 
   const isDataHeart = useDataHeart().length !== 0;
   useEffect(() => {
-    const idSetInter = setInterval(() => {
+    const idSetInterval = setInterval(() => {
       if (isDataHeart) {
         setTimes((prev) => {
           return {
@@ -44,7 +44,7 @@ const HealthRateTimer = () => {
 
     //clear up setInterval
     return () => {
-      clearInterval(idSetInter);
+      clearInterval(idSetInterval);
     };
   }, [isDataHeart]);
 

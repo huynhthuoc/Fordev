@@ -1,4 +1,3 @@
-import React from 'react';
 import ProviderDataHeart from './ProviderDataHeart';
 //components
 import DigitalClockHealth from './components/DigitalClockHealth';
@@ -11,7 +10,7 @@ import './DigitalClock.scss';
 const DigitalClock = () => {
   return (
     <ProviderDataHeart>
-      <div className="digitalClock">
+      <div className="homePage__digitalClock">
         <DigitalClockDirection />
         <DigitalClockDots />
         <DigitalClockDotsInside />

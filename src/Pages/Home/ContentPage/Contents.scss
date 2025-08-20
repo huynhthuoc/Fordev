@@ -1,0 +1,62 @@
+@use '../../../GlobalStyles/mixin' as *;
+@use '../../../GlobalStyles/variable' as *;
+
+.homePage__content {
+  color: $color-text;
+  font-weight: 500;
+  .content__print {
+    color: $color-title;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    height: 4rem;
+    overflow: hidden;
+  }
+  .print__text {
+    height: 4rem;
+    @keyframes scrollText {
+      0% {
+        transform: translateY(0rem);
+      }
+      10% {
+        transform: translateY(0rem);
+      }
+
+      20% {
+        transform: translateY(-4rem);
+      }
+      30% {
+        transform: translateY(-4rem);
+      }
+
+      40% {
+        transform: translateY(-8rem);
+      }
+      50% {
+        transform: translateY(-8rem);
+      }
+
+      60% {
+        transform: translateY(-12rem);
+      }
+      70% {
+        transform: translateY(-12rem);
+      }
+
+      80% {
+        transform: translateY(0rem);
+      }
+      100% {
+        transform: translateY(0rem);
+      }
+    }
+    animation: scrollText 8s ease-out infinite;
+    h4 {
+      height: 4rem;
+      margin: 0;
+      font-size: 3rem;
+      white-space: nowrap;
+      @include flexCenter(true);
+    }
+  }
+}
